@@ -10,3 +10,11 @@ volumes:
   ka-basalt-2022-datadownloader_data:
     external: true
 ```
+## Changing files after docker image was build
+Access the docker container and run download_dataset.py e.g.: 
+
+```shell
+python download_dataset.py --json-file /home/pen-animals-Jul-28.json --output-dir /home/data/MineRLBasaltCreateVillageAnimalPen-v0 --num-demos 20
+```
+
+See DockerFile for more examples.
