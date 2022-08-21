@@ -21,3 +21,5 @@ RUN wget https://openaipublic.blob.core.windows.net/minecraft-rl/models/foundati
 
 RUN chown -R 1001:1001 /home/data/
 RUN chown -R 1001:1001 /home/data/VPT-models
+
+ENTRYPOINT ["/bin/bash"]
