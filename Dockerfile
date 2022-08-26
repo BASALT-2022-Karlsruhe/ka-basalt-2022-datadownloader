@@ -8,5 +8,3 @@ RUN mkdir -p /home/data
 RUN mkdir -p /home/data/VPT-models
 
 RUN chmod +x /home/docker-entrypoint.sh
-
-ENTRYPOINT ["/bin/bash"]
