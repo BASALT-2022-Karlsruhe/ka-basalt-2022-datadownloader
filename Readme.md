@@ -36,11 +36,5 @@ python download_dataset.py --json-file /home/resources/pen-animals-Jul-28.json -
 python download_dataset.py --json-file /home/resources/waterfall-Jul-28.json --output-dir /home/data/MineRLBasaltMakeWaterfall-v0 --num-demos 100
 ```
 
-2. run download.sh or download_dataset.py e.g.: 
-
-```shell
-python download_dataset.py --json-file /home/resources/pen-animals-Jul-28.json --output-dir /home/data/MineRLBasaltFindCave-v0 --num-demos 100
-python3 download_dataset.py --json-file /home/resources/build-house-Jul-28.json --output-dir /home/data/MineRLBasaltBuildVillageHouse-v0 --num-demos 100
-python3 download_dataset.py --json-file /home/resources/pen-animals-Jul-28.json --output-dir /home/data/MineRLBasaltCreateVillageAnimalPen-v0 --num-demos 100
-python3 download_dataset.py --json-file /home/resources/waterfall-Jul-28.json --output-dir /home/data/MineRLBasaltMakeWaterfall-v0 --num-demos 100
-```
+## follow download process
+docker logs -f kabasalt_data_downloader
