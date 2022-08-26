@@ -7,7 +7,7 @@ services:
     container_name: kabasalt_data_downloader
     entrypoint: "./docker-entrypoint.sh"
     init: true
-    tty: true        # docker run -t
+    tty: true        # docker run -t -- enables us to see container output in terminal
     env_file:
       - .env
 
