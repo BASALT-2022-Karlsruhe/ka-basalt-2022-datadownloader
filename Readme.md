@@ -17,17 +17,16 @@ volumes:
     external: true
 ```
 ## Changing files after docker image was build
-1. Access the docker container 
+1. Start docker container in interactive mode
 ```shell
-docker exec -it kabasalt_data_downloader /bin/bash
+docker run -it kabasalt_data_downloader
 ```
 
 2. run download.sh or download_dataset.py e.g.: 
 
 ```shell
-python download_dataset.py --json-file /home/pen-animals-Jul-28.json --output-dir /home/data/MineRLBasaltCreateVillageAnimalPen-v0 --num-demos 100
-python3 download_dataset.py --json-file /home/build-house-Jul-28.json --output-dir /home/data/MineRLBasaltBuildVillageHouse-v0 --num-demos 100
-python3 download_dataset.py --json-file /home/pen-animals-Jul-28.json --output-dir /home/data/MineRLBasaltCreateVillageAnimalPen-v0 --num-demos 100
-python3 download_dataset.py --json-file /home/waterfall-Jul-28.json --output-dir /home/data/MineRLBasaltMakeWaterfall-v0 --num-demos 100
+python download_dataset.py --json-file /home/resources/pen-animals-Jul-28.json --output-dir /home/data/MineRLBasaltCreateVillageAnimalPen-v0 --num-demos 100
+python3 download_dataset.py --json-file /home/resources/build-house-Jul-28.json --output-dir /home/data/MineRLBasaltBuildVillageHouse-v0 --num-demos 100
+python3 download_dataset.py --json-file /home/resources/pen-animals-Jul-28.json --output-dir /home/data/MineRLBasaltCreateVillageAnimalPen-v0 --num-demos 100
+python3 download_dataset.py --json-file /home/resources/waterfall-Jul-28.json --output-dir /home/data/MineRLBasaltMakeWaterfall-v0 --num-demos 100
 ```
-
