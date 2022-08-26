@@ -7,3 +7,6 @@
 docker-compose up -d
 
 docker volume inspect ka-basalt-2022-datadownloader_data
+
+# follow download process
+docker logs -f kabasalt_data_downloader

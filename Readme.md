@@ -16,3 +16,6 @@ volumes:
   ka-basalt-2022-datadownloader_data:
     external: true
 ```
+
+## follow download process
+docker logs -f kabasalt_data_downloader
