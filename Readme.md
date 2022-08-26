@@ -20,7 +20,7 @@ volumes:
 ## Changing files after docker image was build
 1. Start docker container in interactive mode
 ```shell
-docker run -it -v ka-basalt-2022-datadownloader_data:/home/data kabasalt_data_downloader /bin/bash
+docker run -it --name kabasalt_data_downloader -v ka-basalt-2022-datadownloader_data:/home/data kabasalt_data_downloader /bin/bash
 ```
 
 2. run download_dataset.py e.g.: 
