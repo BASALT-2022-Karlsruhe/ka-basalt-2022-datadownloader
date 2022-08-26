@@ -22,7 +22,7 @@ volumes:
 docker exec -it kabasalt_data_downloader /bin/bash
 ```
 
-2. run download_dataset.py e.g.: 
+2. run download.sh or download_dataset.py e.g.: 
 
 ```shell
 python download_dataset.py --json-file /home/pen-animals-Jul-28.json --output-dir /home/data/MineRLBasaltCreateVillageAnimalPen-v0 --num-demos 100
@@ -31,5 +31,3 @@ python3 download_dataset.py --json-file /home/pen-animals-Jul-28.json --output-d
 python3 download_dataset.py --json-file /home/waterfall-Jul-28.json --output-dir /home/data/MineRLBasaltMakeWaterfall-v0 --num-demos 100
 ```
 
-See DockerFile for more examples.
-The examples are stored within a binded docker volume
