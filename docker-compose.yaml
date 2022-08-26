@@ -1,24 +1,20 @@
+version: "3.9"
 services:
-  kabasalt:
+  kabasalt_downloader:
+    build:
+      context: .
+
     image: kabasalt_data_downloader
     container_name: kabasalt_data_downloader
 
     # for interactive mode e.g. for entrypoint /bin/shell
-    stdin_open: true # docker run -i
-    tty: true        # docker run -t
-    entrypoint: "/bin/bash"
+    #stdin_open: true # docker run -i
+    #tty: true        # docker run -t
+    entrypoint: "bash download.sh"
+    #init: true
+    env_file:
+      - .env
 
-    # Specifying an init process ensures the usual responsibilities of an init system,
-    # such as reaping zombie processes, are performed inside the created container.
-    # https://docs.docker.com/engine/reference/run/#specify-an-init-process
-    init: true
-
-    environment:
-      PYTHONUNBUFFERED: 1
-    build:
-      context: .
-    ports:
-      - 9998:9998
     volumes:
       - type: volume
         source: data
