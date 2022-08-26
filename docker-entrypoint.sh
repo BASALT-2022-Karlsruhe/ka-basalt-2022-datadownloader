@@ -1,3 +1,5 @@
+#!/bin/sh
+
 python3 download_dataset.py --json-file /home/resources/find-cave-Jul-28.json --output-dir /home/data/MineRLBasaltFindCave-v0 --num-demos ${NUM_CAVE_DEMOS}
 python3 download_dataset.py --json-file /home/resources/build-house-Jul-28.json --output-dir /home/data/MineRLBasaltBuildVillageHouse-v0 --num-demos ${NUM_VILLAGE_DEMOS}
 python3 download_dataset.py --json-file /home/resources/pen-animals-Jul-28.json --output-dir /home/data/MineRLBasaltCreateVillageAnimalPen-v0 --num-demos ${NUM_ANIMAL_DEMOS}

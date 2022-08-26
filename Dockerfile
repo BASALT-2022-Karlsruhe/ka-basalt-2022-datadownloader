@@ -7,4 +7,4 @@ WORKDIR /home
 RUN mkdir -p /home/data
 RUN mkdir -p /home/data/VPT-models
 
-ENTRYPOINT ["/bin/bash"]
+RUN chmod +x /home/docker-entrypoint.sh
