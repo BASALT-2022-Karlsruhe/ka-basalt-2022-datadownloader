@@ -4,13 +4,13 @@ services:
     build:
       context: .
 
-    image: kabasalt_data_downloader
-    container_name: kabasalt_data_downloader
+    image: kabasalt_downloader
+    container_name: kabasalt_downloader
 
     # for interactive mode e.g. for entrypoint /bin/shell
     #stdin_open: true # docker run -i
     #tty: true        # docker run -t
-    entrypoint: "bash download.sh"
+    entrypoint: "/home/docker-entrypoint.sh"
     #init: true
     env_file:
       - .env
