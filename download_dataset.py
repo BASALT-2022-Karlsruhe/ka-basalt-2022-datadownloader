@@ -25,11 +25,14 @@ def main(args):
     data = eval(data)
     basedir = data["basedir"]
     relpaths = data["relpaths"]
-    if args.num_demos is not None:
-        relpaths = relpaths[:args.num_demos]
 
     if not os.path.exists(args.output_dir):
         os.makedirs(args.output_dir)
+
+    num_existing_demos = len([name for name in os.listdir(args.output_dir) if name.endswith(".mp4")])
+
+    if args.num_demos is not None:
+        relpaths = relpaths[num_existing_demos:args.num_demos + num_existing_demos]
 
     for i, relpath in enumerate(relpaths):
         url = basedir + relpath
