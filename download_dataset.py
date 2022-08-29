@@ -29,6 +29,11 @@ def main(args):
     if not os.path.exists(args.output_dir):
         os.makedirs(args.output_dir)
 
+    # cleanup possibly corrupt downloads
+    for f in os.listdir(args.output_dir):
+        if f.endswith("_tmp"):
+            os.remove(os.path.join(args.output_dir, f))
+
     num_existing_demos = len([name for name in os.listdir(args.output_dir) if name.endswith(".mp4")])
 
     if args.num_demos is not None:
@@ -41,7 +46,7 @@ def main(args):
         percent_done = 100 * i / len(relpaths)
         print(f"[{percent_done:.0f}%] Downloading {outpath}")
         try:
-            urllib.request.urlretrieve(url, outpath)
+            urllib.request.urlretrieve(url, outpath + "_tmp")
         except Exception as e:
             print(f"\tError downloading {url}: {e}. Moving on")
             continue
@@ -51,10 +56,16 @@ def main(args):
         jsonl_filename = filename.replace(".mp4", ".jsonl")
         jsonl_outpath = os.path.join(args.output_dir, jsonl_filename)
         try:
-            urllib.request.urlretrieve(jsonl_url, jsonl_outpath)
+            urllib.request.urlretrieve(jsonl_url, jsonl_outpath + "_tmp")
         except Exception as e:
             print(f"\tError downloading {jsonl_url}: {e}. Cleaning up mp4")
             os.remove(outpath)
+
+        # remove tmp suffix when state is consistent
+        os.rename(src=os.path.join(args.output_dir, filename + "_tmp"),
+                  dst=os.path.join(args.output_dir, filename.replace("_tmp", "")))
+        os.rename(src=os.path.join(args.output_dir, jsonl_filename + "_tmp"),
+                  dst=os.path.join(args.output_dir, jsonl_filename.replace("_tmp", "")))
 
 
 if __name__ == "__main__":
