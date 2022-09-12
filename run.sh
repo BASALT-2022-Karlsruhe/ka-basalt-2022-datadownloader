@@ -6,7 +6,7 @@
 # build and run container - the data will be downloaded to the created data folder
 docker-compose up -d --build
 
-docker volume inspect ka-basalt-2022-datadownloader_data
+docker volume inspect ka-basalt-2022-datadownloader_data_wombat
 
 # follow download process
 docker logs -f kabasalt_data_downloader
