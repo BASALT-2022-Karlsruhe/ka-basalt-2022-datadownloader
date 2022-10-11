@@ -9,7 +9,7 @@ python3 download_dataset.py --json-file /home/resources/waterfall-Jul-28.json --
 wget https://openaipublic.blob.core.windows.net/minecraft-rl/models/foundation-model-1x.model -P /home/data/VPT-models
 wget https://openaipublic.blob.core.windows.net/minecraft-rl/models/foundation-model-1x.weights -P /home/data/VPT-models
 ## width 2x
-wget https://openaipublic.blob.core.windows.net/minecraft-rl/models/2x.model -P /home/data/VPT-models
+wget https://openaipublic.blob.core.windows.net/minecraft-rl/models/2x.model -O /home/data/VPT-models/foundation-model-2x.model
 wget https://openaipublic.blob.core.windows.net/minecraft-rl/models/foundation-model-2x.weights -P /home/data/VPT-models
 ## width 3x
 wget https://openaipublic.blob.core.windows.net/minecraft-rl/models/foundation-model-3x.model -P /home/data/VPT-models
