@@ -19,5 +19,5 @@ wget https://openaipublic.blob.core.windows.net/minecraft-rl/models/bc-house-3x.
 ## RL finetuned for crafting diamond pickaxe ASAP, width 2x
 wget https://openaipublic.blob.core.windows.net/minecraft-rl/models/rl-from-foundation-2x.weights -P /home/data/VPT-models
 
-chown -R 1001:1001 /home/data/
-chown -R 1001:1001 /home/data/VPT-models
+chown -R 1001:1001 /home/${DATA_ROOT}/
+chown -R 1001:1001 /home/${DATA_ROOT}/VPT-models
