@@ -13,7 +13,7 @@ services:
 
     volumes:
       - type: volume
-        source: data_wombat2
+        source: data_wombat
         target: /home/data_wombat
         volume:
           nocopy: true
@@ -22,9 +22,9 @@ services:
         target: /home/data
 
 volumes:
-  data_wombat2:
+  data_wombat:
     driver_opts:
       type: "nfs"
       o: "addr=ipe-wombat.fzi.de,nolock,soft,rw"
-      device: ":/data/share/BASALT2"
+      device: ":/home/share/BASALT"
   data:
